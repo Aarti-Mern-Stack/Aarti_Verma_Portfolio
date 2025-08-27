@@ -1,0 +1,218 @@
+.about {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, oklch(0.99 0.01 320) 0%, oklch(0.97 0.02 300) 100%);
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.content {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-family: var(--font-playfair);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, oklch(0.65 0.25 320), oklch(0.55 0.3 300));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.titleUnderline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, oklch(0.65 0.25 320), oklch(0.55 0.3 300));
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.aboutContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.textContent {
+  animation: slideInLeft 0.8s ease 0.2s both;
+}
+
+.profileSummary {
+  margin-bottom: 3rem;
+}
+
+.summaryTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: oklch(0.4 0.1 280);
+  margin-bottom: 1rem;
+}
+
+.summaryText {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: oklch(0.45 0.05 280);
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px oklch(0.65 0.25 320 / 0.1);
+  border: 1px solid oklch(0.9 0.02 320 / 0.3);
+  transition: all 0.3s ease;
+}
+
+.highlight:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px oklch(0.65 0.25 320 / 0.15);
+}
+
+.highlightIcon {
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, oklch(0.95 0.02 320), oklch(0.93 0.03 300));
+  border-radius: 50%;
+}
+
+.highlightContent h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: oklch(0.4 0.1 280);
+  margin-bottom: 0.3rem;
+}
+
+.highlightContent p {
+  color: oklch(0.5 0.05 280);
+  font-size: 1rem;
+}
+
+.visualContent {
+  animation: slideInRight 0.8s ease 0.4s both;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.statsCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px oklch(0.65 0.25 320 / 0.1);
+  border: 1px solid oklch(0.9 0.02 320 / 0.3);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat {
+  text-align: center;
+  padding: 1rem;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, oklch(0.65 0.25 320), oklch(0.55 0.3 300));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: oklch(0.5 0.05 280);
+  font-weight: 500;
+}
+
+.skillsPreview {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px oklch(0.65 0.25 320 / 0.1);
+  border: 1px solid oklch(0.9 0.02 320 / 0.3);
+}
+
+.skillsPreview h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: oklch(0.4 0.1 280);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.techStack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.tech {
+  background: linear-gradient(135deg, oklch(0.95 0.02 320), oklch(0.93 0.03 300));
+  color: oklch(0.5 0.2 300);
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  font-weight: 500;
+  text-align: center;
+  border: 1px solid oklch(0.9 0.02 320 / 0.3);
+  transition: all 0.3s ease;
+}
+
+.tech:hover {
+  background: linear-gradient(135deg, oklch(0.65 0.25 320), oklch(0.55 0.3 300));
+  color: white;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .aboutContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .statsCard {
+    grid-template-columns: 1fr;
+  }
+
+  .techStack {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight {
+    flex-direction: column;
+    text-align: center;
+  }
+}

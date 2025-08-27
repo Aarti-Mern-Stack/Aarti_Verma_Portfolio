@@ -1,0 +1,269 @@
+.skills {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, oklch(0.97 0.02 300) 0%, oklch(0.99 0.01 320) 100%);
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.content {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-family: var(--font-playfair);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, oklch(0.65 0.25 320), oklch(0.55 0.3 300));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.titleUnderline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, oklch(0.65 0.25 320), oklch(0.55 0.3 300));
+  margin: 0 auto 1rem;
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: oklch(0.5 0.05 280);
+  font-weight: 400;
+}
+
+.skillsContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: oklch(0.4 0.1 280);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.technicalSkills {
+  animation: slideInLeft 0.8s ease 0.2s both;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.skillCategory {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px oklch(0.65 0.25 320 / 0.1);
+  border: 1px solid oklch(0.9 0.02 320 / 0.3);
+  transition: all 0.3s ease;
+}
+
+.skillCategory:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px oklch(0.65 0.25 320 / 0.15);
+}
+
+.categoryTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: oklch(0.5 0.2 300);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid oklch(0.95 0.02 320);
+}
+
+.skillsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skillItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skillName {
+  font-weight: 600;
+  color: oklch(0.4 0.1 280);
+}
+
+.skillPercentage {
+  font-size: 0.9rem;
+  color: oklch(0.5 0.2 300);
+  font-weight: 600;
+}
+
+.skillBar {
+  height: 8px;
+  background: oklch(0.95 0.02 320);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skillProgress {
+  height: 100%;
+  background: linear-gradient(135deg, oklch(0.65 0.25 320), oklch(0.55 0.3 300));
+  border-radius: 4px;
+  width: 0;
+  transition: width 1s ease;
+}
+
+.skillProgress.animated {
+  width: var(--skill-level);
+}
+
+.softSkills {
+  animation: slideInRight 0.8s ease 0.4s both;
+}
+
+.softSkillsGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.softSkillItem {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px oklch(0.65 0.25 320 / 0.1);
+  border: 1px solid oklch(0.9 0.02 320 / 0.3);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.softSkillItem.visible {
+  opacity: 1;
+  transform: translateX(0);
+  animation: slideInRight 0.6s ease var(--delay) both;
+}
+
+.softSkillItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px oklch(0.65 0.25 320 / 0.15);
+}
+
+.softSkillIcon {
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, oklch(0.95 0.02 320), oklch(0.93 0.03 300));
+  border-radius: 50%;
+}
+
+.softSkillName {
+  font-weight: 600;
+  color: oklch(0.4 0.1 280);
+}
+
+.certifications {
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.certificationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.certificationItem {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px oklch(0.65 0.25 320 / 0.1);
+  border: 1px solid oklch(0.9 0.02 320 / 0.3);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.certificationItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px oklch(0.65 0.25 320 / 0.15);
+}
+
+.certIcon {
+  font-size: 2.5rem;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, oklch(0.95 0.02 320), oklch(0.93 0.03 300));
+  border-radius: 50%;
+}
+
+.certContent h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: oklch(0.4 0.1 280);
+  margin-bottom: 0.5rem;
+}
+
+.certContent p {
+  color: oklch(0.5 0.05 280);
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .skillsContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificationsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificationItem {
+    flex-direction: column;
+    text-align: center;
+  }
+}

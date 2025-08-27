@@ -1,0 +1,266 @@
+.experience {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, oklch(0.97 0.02 300) 0%, oklch(0.99 0.01 320) 100%);
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.content {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-family: var(--font-playfair);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, oklch(0.65 0.25 320), oklch(0.55 0.3 300));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.titleUnderline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, oklch(0.65 0.25 320), oklch(0.55 0.3 300));
+  margin: 0 auto 1rem;
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: oklch(0.5 0.05 280);
+  font-weight: 400;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timelineLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, oklch(0.65 0.25 320), oklch(0.55 0.3 300));
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.timelineItem.visible {
+  opacity: 1;
+}
+
+.timelineItem.left {
+  transform: translateX(-50px);
+}
+
+.timelineItem.right {
+  transform: translateX(50px);
+}
+
+.timelineItem.visible.left,
+.timelineItem.visible.right {
+  transform: translateX(0);
+}
+
+.timelineMarker {
+  position: absolute;
+  left: 50%;
+  top: 2rem;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.markerDot {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, oklch(0.65 0.25 320), oklch(0.55 0.3 300));
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 0 0 4px oklch(0.65 0.25 320 / 0.2);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.experienceCard {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px oklch(0.65 0.25 320 / 0.1);
+  border: 1px solid oklch(0.9 0.02 320 / 0.3);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.experienceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px oklch(0.65 0.25 320 / 0.15);
+}
+
+.left .experienceCard {
+  margin-right: 60%;
+}
+
+.right .experienceCard {
+  margin-left: 60%;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.period {
+  font-size: 0.95rem;
+  color: oklch(0.5 0.1 280);
+  font-weight: 500;
+  background: oklch(0.95 0.02 320);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.type {
+  padding: 0.4rem 1rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.currentposition {
+  background: linear-gradient(135deg, oklch(0.7 0.2 120), oklch(0.6 0.25 140));
+  color: white;
+}
+
+.previousrole {
+  background: linear-gradient(135deg, oklch(0.65 0.25 320), oklch(0.55 0.3 300));
+  color: white;
+}
+
+.trainingrole {
+  background: linear-gradient(135deg, oklch(0.7 0.2 60), oklch(0.6 0.25 80));
+  color: white;
+}
+
+.cardContent h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: oklch(0.3 0.1 280);
+  margin-bottom: 1rem;
+}
+
+.companyInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.company {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: oklch(0.5 0.2 300);
+}
+
+.location {
+  font-size: 1rem;
+  color: oklch(0.5 0.05 280);
+}
+
+.responsibilities {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.responsibility {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: oklch(0.45 0.05 280);
+}
+
+.responsibility::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: oklch(0.65 0.25 320);
+  font-size: 0.8rem;
+}
+
+.responsibility:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .timelineLine {
+    left: 2rem;
+  }
+
+  .timelineMarker {
+    left: 2rem;
+  }
+
+  .left .experienceCard,
+  .right .experienceCard {
+    margin-left: 4rem;
+    margin-right: 0;
+  }
+
+  .timelineItem.left,
+  .timelineItem.right {
+    transform: translateX(-30px);
+  }
+
+  .timelineItem.visible.left,
+  .timelineItem.visible.right {
+    transform: translateX(0);
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .companyInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
