@@ -90,7 +90,7 @@ export default function HeroSection() {
                 </div>
                 <div className={styles.cardInfo}>
                   <h3>Aarti Verma</h3>
-                  <p>Full-Stack Developer</p>
+                  <p>MERN-Stack Developer</p>
                   <div className={styles.skills}>
                     <span>React</span>
                     <span>Node.js</span>

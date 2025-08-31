@@ -58,7 +58,7 @@ export default function AboutSection() {
                   <div className={styles.highlightIcon}>💼</div>
                   <div className={styles.highlightContent}>
                     <h4>Experience</h4>
-                    <p>2+ Years in Full-Stack Development</p>
+                    <p>3+ Years in Full-Stack Development</p>
                   </div>
                 </div>
 
@@ -75,7 +75,7 @@ export default function AboutSection() {
             <div className={styles.visualContent}>
               <div className={styles.statsCard}>
                 <div className={styles.stat}>
-                  <div className={styles.statNumber}>2+</div>
+                  <div className={styles.statNumber}>3+</div>
                   <div className={styles.statLabel}>Years Experience</div>
                 </div>
                 <div className={styles.stat}>
