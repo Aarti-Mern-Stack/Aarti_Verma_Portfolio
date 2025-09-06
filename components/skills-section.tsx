@@ -14,6 +14,8 @@ const technicalSkills = [
       { name: "JavaScript", level: 88 },
       { name: "React.js", level: 92 },
       { name: "Bootstrap", level: 85 },
+      { name: "Next.js", level: 80 },
+      { name: "TypeScript", level: 80 },
     ],
   },
   {
