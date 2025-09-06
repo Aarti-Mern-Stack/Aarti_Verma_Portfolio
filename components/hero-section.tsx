@@ -1,35 +1,52 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-import styles from "./hero-section.module.css"
-
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import styles from "./hero-section.module.css";
+import { Eye } from "lucide-react"
 export default function HeroSection() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
   const scrollToContact = () => {
-    const element = document.getElementById("contact")
+    const element = document.getElementById("contact");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   const scrollToProjects = () => {
-    const element = document.getElementById("projects")
+    const element = document.getElementById("projects");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
+
+  const DownloadMyCV = () => {
+    const link = document.createElement("a");
+    link.href = "/Aarti_resume.pdf";
+    link.download = "Aarti_resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const openResumeInNewTab = () => {
+    window.open("/Aarti_resume.pdf", "_blank", "noopener,noreferrer");
+  };
 
   return (
     <section id="hero" className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <div className={`${styles.textContent} ${isVisible ? styles.visible : ""}`}>
+          <div
+            className={`${styles.textContent} ${
+              isVisible ? styles.visible : ""
+            }`}
+          >
             <div className={styles.greeting}>
               <span className={styles.wave}>👋</span>
               <span>Hello, I'm</span>
@@ -46,8 +63,9 @@ export default function HeroSection() {
             </h2>
 
             <p className={styles.description}>
-              Passionate about creating intuitive and responsive web applications with expertise in full-stack
-              development. I transform ideas into digital experiences that make a difference.
+              Passionate about creating intuitive and responsive web
+              applications with expertise in full-stack development. I transform
+              ideas into digital experiences that make a difference.
             </p>
 
             <div className={styles.contactInfo}>
@@ -66,16 +84,36 @@ export default function HeroSection() {
             </div>
 
             <div className={styles.buttons}>
-              <Button onClick={scrollToProjects} className={styles.primaryButton}>
+              <Button
+                onClick={scrollToProjects}
+                className={styles.primaryButton}
+              >
                 View My Work
               </Button>
-              <Button onClick={scrollToContact} variant="outline" className={styles.secondaryButton}>
-                Get In Touch
+              <Button
+                onClick={DownloadMyCV}
+                variant="outline"
+                className={styles.secondaryButton}
+              >
+                Download my CV
+              </Button>
+              <Button
+                onClick={openResumeInNewTab}
+                variant="outline"
+                className={`${styles.secondaryButton} ${styles.iconButton}`}
+                aria-label="Open resume in new tab"
+                title="Open resume in new tab"
+              >
+                <Eye className="w-5 h-5" />
               </Button>
             </div>
           </div>
 
-          <div className={`${styles.visualContent} ${isVisible ? styles.visible : ""}`}>
+          <div
+            className={`${styles.visualContent} ${
+              isVisible ? styles.visible : ""
+            }`}
+          >
             <div className={styles.profileCard}>
               <div className={styles.cardHeader}>
                 <div className={styles.cardDots}>
@@ -128,5 +166,5 @@ export default function HeroSection() {
         <div className={styles.gradient3}></div>
       </div>
     </section>
-  )
+  );
 }

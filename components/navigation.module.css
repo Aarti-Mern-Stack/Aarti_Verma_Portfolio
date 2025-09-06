@@ -1,4 +1,4 @@
-.nav {
+/* .nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -81,5 +81,254 @@
 
   .navLink {
     font-size: 0.9rem;
+  }
+} */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid oklch(0.9 0.02 320 / 0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.nav.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px oklch(0.65 0.25 320 / 0.1);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  background: var(--gradient-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logoBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  color: inherit;
+}
+.navListDesktop {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  align-items: center;
+}
+.navLink {
+  background: none;
+  border: none;
+  color: oklch(0.4 0.05 280);
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease, background 0.3s ease, transform 0.2s ease;
+}
+.navLink:hover {
+  color: oklch(0.65 0.25 320);
+}
+.active {
+  color: oklch(0.65 0.25 320);
+}
+.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-pink);
+  border-radius: 1px;
+}
+.menuToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.04);
+  border: none;
+  cursor: pointer;
+  transition: background 150ms ease, transform 150ms ease;
+}
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: oklch(0.4 0.05 280);
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 1rem;
+}
+.menuToggle:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+.menuToggle:active {
+  transform: scale(0.98);
+}
+.burger {
+  width: 20px;
+  height: 2px;
+  background: oklch(0.35 0.04 280);
+  position: relative;
+  display: block;
+  transition: background 0.2s ease;
+}
+.burger::before,
+.burger::after {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: oklch(0.35 0.04 280);
+  position: absolute;
+  left: 0;
+  transition: transform 0.2s ease, top 0.2s ease, opacity 0.2s ease;
+}
+.burger::before {
+  top: -6px;
+}
+.burger::after {
+  top: 6px;
+}
+.menuToggle[aria-expanded="true"] .burger {
+  background: transparent;
+}
+.menuToggle[aria-expanded="true"] .burger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.menuToggle[aria-expanded="true"] .burger::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  transition: background 200ms ease;
+  z-index: 999;
+}
+.overlayVisible {
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: auto;
+}
+.mobileDrawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100dvh;
+  width: min(84vw, 320px);
+  background: #ffffff;
+  border-left: 1px solid oklch(0.9 0.02 320 / 0.6);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.12);
+  transform: translateX(100%);
+  transition: transform 220ms ease;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  overflow-y: auto;
+}
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: oklch(0.4 0.05 280);
+  cursor: pointer;
+  margin: 0;
+}
+.mobileDrawerOpen {
+  transform: translateX(0);
+}
+.navListMobile {
+  margin: 0;
+  padding: 2.5rem 0 1rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.navLinkMobile {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  color: oklch(0.4 0.05 280);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.9rem 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease, transform 150ms ease;
+}
+.navLinkMobile:hover {
+  color: oklch(0.65 0.25 320);
+  background: oklch(0.95 0.02 320);
+}
+.activeMobile {
+  color: oklch(0.65 0.25 320);
+  background: linear-gradient(
+    0deg,
+    oklch(0.96 0.02 320) 0%,
+    oklch(0.98 0.01 320) 100%
+  );
+  box-shadow: inset 0 0 0 1px oklch(0.9 0.02 320 / 0.6);
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  .navListDesktop {
+    display: none;
+  }
+  .menuToggle {
+    display: inline-flex;
+  }
+  .navLink {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 768px) {
+  .navListDesktop {
+    display: flex;
+    gap: 2rem;
+  }
+  .menuToggle,
+  .mobileDrawer,
+  .overlay {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobileDrawer,
+  .overlay,
+  .nav,
+  .menuToggle .burger::before,
+  .menuToggle .burger::after {
+    transition: none !important;
   }
 }
